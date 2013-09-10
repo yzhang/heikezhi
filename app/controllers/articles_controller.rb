@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
     @user = OpenStruct.new(
       twitter: "http://twitter.com/yuanyiz",
       google_plus: 'http://gplus.to/yuanyiz',
-      github: 'http://github.com/yzhang',
+      github: 'https://github.com/yzhang/heikezhi',
       atom_feed: '/atom',
       json_feed: '/'
     )
