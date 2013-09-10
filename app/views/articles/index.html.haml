@@ -1,0 +1,27 @@
+= render 'article'
+
+= content_for :social do
+  - if user_signed_in?
+    = render '/shared/signin_nav'
+  - else
+    - if @user.twitter.present?
+      %a{href: @user.twitter, title: 'Twitter'}
+        %i.icon-twitter-sign
+    - if @user.google_plus.present?
+      %a{href: @user.google_plus, title: "Google+"}
+        %i.icon-google-plus-sign
+    - if @user.github.present?
+      %a{href: @user.github, title: "Github"}
+        %i.icon-github-sign
+    %a{href: @user.atom_feed, title: "Atom Feed"}
+      %i.icon-rss
+    %a{href: '/signin', title: "Sign In"}
+      %i.icon-signin
+
+= content_for :head do
+  :sass
+    @media screen and (max-width: 640px)
+      #main
+        display: none
+      aside
+        width: 100%

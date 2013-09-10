@@ -1,0 +1,15 @@
+%section.session
+  .content
+    = render '/shared/flashes'
+
+    = semantic_form_for :user, :url => '/signup' do |f|
+      = f.input :name, label: false, required: false, input_html: {placeholder: t(:name)}
+      = f.input :email, label: false, required: false, input_html: {placeholder: "Email"}
+      = f.input :password, label: false, required: false, input_html: {placeholder: t(:password)}
+
+      %p
+        %button.btn= t :signup
+
+    .extra
+      %p
+        %a{:href => "/forgot_password"}= t :forgot_password

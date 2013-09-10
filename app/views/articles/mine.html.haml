@@ -1,0 +1,21 @@
+= render 'article'
+
+= content_for :social do
+  %a{href: "/articles/new", title: 'New'}
+    %i.icon-plus
+  %a.edit{href: edit_article_path(@article.permalink), title: "Edit"}
+    %i.icon-edit
+  %a.delete{href: delete_article_path(@article.permalink), title: "Delete", data:{method:'delete', confirm:'Are you sure?'}}
+    %i.icon-remove
+  %a{href: '/profile/edit', title: "Profile"}
+    %i.icon-user
+  %a{href: '/signout', title: "Sign Out"}
+    %i.icon-signout
+
+= content_for :head do
+  :sass
+    @media screen and (max-width: 768px)
+      #main
+        display: none
+      aside
+        width: 100%

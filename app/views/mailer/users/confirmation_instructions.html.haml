@@ -1,0 +1,4 @@
+%p
+  Please confirm your email:
+%p
+  = link_to user_confirmation_url(@user, :confirmation_token => @user.confirmation_token), user_confirmation_url(@user, :confirmation_token => @user.confirmation_token)

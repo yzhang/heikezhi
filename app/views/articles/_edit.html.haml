@@ -1,0 +1,70 @@
+= form_for @article, :url => update_article_path(@article.permalink), :html => {'autocomplete' => 'off', :id => 'article-form'} do |f|
+  %header
+    %section
+      = f.text_field :title, :class => 'title', :placeholder => 'Title', 'autocomplete' => 'off'
+      .meta
+        = "http://heikezhi.com/#{@article.user.name}/"
+        = f.text_field :permalink, :placeholder => 'permalink', :class => 'permalink'
+
+      %input.image{type: 'file'}
+
+      .menu
+        %ul
+          %li
+            %a.bold{href: '#'}
+              %i.icon-bold
+          %li
+            %a.strike{href: '#'}
+              %i.icon-strikethrough
+          %li
+            %a.link{href: '#'}
+              %i.icon-link
+          %li
+            %a.header{href: '#'}
+              %i.icon-h-sign
+          %li
+            %a.picture{href: '#'}
+              %i.icon-picture
+          %li
+            %a.video{href: '#'}
+              %i.icon-play-circle
+          %li
+            %a.ul{href: '#'}
+              %i.icon-list-ul
+          %li
+            %a.ol{href: '#'}
+              %i.icon-list-ol
+          %li
+            %a.quote{href: '#'}
+              %i.icon-quote-left
+          %li
+            %a.code{href: '#'}
+              %i.icon-code
+
+        .clearfix
+
+  %section
+    - if !support_browser?
+      %article
+        %p
+          Sorry, doesn't support your browser at now, please switch to a webkit/blink based browser.
+    - else
+      %article{contenteditable: "true", spellcheck: "false"}
+        - if @article.content.try(:strip).present?
+          = preserve do
+            =raw @article.content
+        - else
+          %p
+
+%script#embedly-template{type: 'x/template'}
+  .embedly
+    .preview
+      %i.icon-play-circle
+    %p.info
+      %textarea{placeholder: 'embed code'}
+
+      %a.btn.save
+        Save
+      %a.btn.cancel
+        Cancel
+    .clearfix

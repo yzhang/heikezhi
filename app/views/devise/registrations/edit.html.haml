@@ -1,0 +1,18 @@
+%section.session
+  .title
+    %h1= t(:setting)
+
+  .content
+    = semantic_form_for @user, :url => registration_path(@user), :html => {autocomplete: "off"} do |f|
+      = f.input :name, label: false, required: false, input_html: {placeholder: t(:name)}
+      = f.input :email, label: false, required: false, input_html: {placeholder: "Email"}
+      = f.input :current_password, label: false, required: false, input_html: {placeholder: t(:current_password), autocomplete: "off", value: ''}
+      = f.input :password, label: false, required: false, input_html: {placeholder: t(:new_password), autocomplete: "off", value: ''}
+
+      %p
+        %button.btn= t(:update)
+
+    .extra
+      %p
+        = link_to t(:delete_account), registration_path(@user), confirm: 'Are you sure?', method: :delete
+

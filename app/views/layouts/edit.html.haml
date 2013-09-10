@@ -1,0 +1,26 @@
+!!!
+%html{lang:'zh-CN'}
+  %head
+    %meta{:charset => 'utf-8'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+
+    %title  黑客志
+
+    %link{:rel => 'shortcut icon', :href => "/favicon.ico" }
+
+    = stylesheet_link_tag "edit"
+    = yield :head
+    = csrf_meta_tags
+
+  %body
+    = render "layouts/images"
+
+    #main
+      #spinner
+        %i.icon-spin.icon-spinner
+      #content
+        = yield
+
+    = raw(render('/templates/article_item'))
+    = javascript_include_tag "edit"
+    = render '/shared/ga'

@@ -1,0 +1,26 @@
+= render 'layouts/header'
+
+%section.session.profile
+  .content
+    = semantic_form_for @profile, url: update_profile_path, method: 'put'  do |f|
+      = f.input :bio, as: :text, label: t(:bio), required: false, input_html: {placeholder: t("bio_140")}
+
+      = f.input :twitter, label: t(:social_links), required: false, input_html: {placeholder: t(:twitter)}
+      = f.input :github, label: false, required: false, input_html: {placeholder: t(:github)}
+      = f.input :google_plus, label: false, required: false, input_html: {placeholder: t(:google_plus)}
+
+      %p
+        %button.btn= t(:update)
+
+= content_for :social do
+  = render '/shared/signin_nav'
+
+= content_for :head do
+  :sass
+    @media screen and (max-width: 768px)
+      #main
+        left: 0px
+      aside
+        display: none
+
+

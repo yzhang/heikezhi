@@ -1,0 +1,13 @@
+- user = @article.user
+%footer
+  %section
+    .user
+      .avatar
+        %img{:src => user.avatar}
+      .bio
+        %p
+          %b
+            = user.name
+          %br
+          = user.bio
+      .clearfix

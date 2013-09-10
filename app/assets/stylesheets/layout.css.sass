@@ -1,0 +1,76 @@
+aside
+  position: fixed
+  top: 0
+  width: 30%
+  bottom: 0
+  left: 0
+  background: #333
+  color: white
+  overflow-y: scroll
+  .social
+    position: fixed
+    width: 250px
+    top: 0px
+    padding: 10px 20px 10px 20px
+    font-size: 36px
+    background: #333
+    &:hover
+      background-color: #181818
+      a
+        color: #ddd
+  ul
+    margin-top: 56px
+    list-style: none
+    li.spinner
+      font-size: 36px
+      color: #697079
+      padding: 20px 100px
+    li
+      cursor: pointer
+      a
+        padding: 15px 20px
+        color: #798089
+        line-height: 160%
+        display: block
+        span.status
+          color: #e00
+      &:hover
+        background-color: #282828
+        a
+          color: #ddd
+      &.active
+        background-color: #181818
+        a
+          color: #ccc 
+
+header
+  background-color: white
+  opacity: 0.8
+
+#main
+  position: fixed
+  left: 30%
+  right: 0
+  top: 0
+  bottom: 0
+  overflow-y: scroll
+  background: white
+
+  #spinner
+    font-size: 48px
+    position: absolute
+    left: 50%
+    top: 50px
+    margin-left: -24px
+    display: none
+
+@media screen and (min-width: 833px)
+  aside
+    width: 250px
+  #main
+    left: 250px
+
+@media screen and (max-width: 960px)
+  section
+    padding: 0 20px
+    width: auto

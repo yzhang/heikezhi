@@ -1,0 +1,152 @@
+$width: 600px
+
+@import font-awesome
+
+@import base
+@import layout
+
+header
+  position: relative
+  left: 0
+  right: 0
+  section
+    border-bottom: 1px dashed #697079
+  h1
+    line-height: 32px
+    font-size: 28px
+    padding: 32px 0
+    text-align: center
+
+article
+  font-family: Georgia,Arial,'Hiragino Sans GB','Microsoft YaHei',sans-serif
+  margin-top: 30px
+  .alignright
+    float: right
+    padding: 0 0 10px 10px
+
+  p
+    word-wrap: break-word
+  p, blockquote,pre
+    margin-bottom: 20px
+  audio
+    margin-bottom: 10px
+  img
+    max-width: 600px
+  pre
+    overflow-x: scroll
+  ul, ol
+    margin-left: 40px
+  a
+    text-decoration: underline
+.meta
+  line-height: 28px
+  margin-bottom: 20px
+
+footer
+  background: white
+  height: 160px
+  color: #333
+
+  section
+    border-top: 1px dashed #333
+    width: 600px
+    margin: 0 auto
+    .user
+      margin: 30px auto
+      width: 400px
+    p
+      margin-bottom: 10px
+    a
+      text-decoration: none
+    .avatar
+      float: left
+      img
+        padding-top: 8px
+        width: 80px
+        height: 80px
+        border-radius: 100%
+        -moz-border-radius: 100%
+    .bio
+      float: left
+      width: 240px
+      margin-left: 40px
+    .social
+      font-size: 20px
+      line-height: 20px
+
+@media screen and (max-width: 400px)
+  footer section .user
+    width: 100%
+
+/* article end */
+
+/* comments and related starts */
+#disqus_thread/*, #related*/
+  border-top: 1px dashed #697079
+
+#disqus_thread
+  padding-top: 20px
+/* comments and related starts */
+
+/* session start */
+body.sessions
+  #main
+    left: 0
+  
+section.session
+  padding-top: 20px
+  text-align: center
+
+  .content
+    margin: 50px auto
+    width: 310px
+
+  .flash
+    text-align: left
+    font-size: 14px
+    width: 310px
+    margin: 0 auto
+
+    .alert, .notice
+      color: red
+
+  .btn
+    margin-top: 20px
+    
+  .extra
+    font-size: 14px
+
+  input, textarea
+    width: 100%
+
+  li.input
+    display: block
+    margin-bottom: 20px
+    text-align: left
+    label
+      text-align: left
+    p.inline-errors
+      color: red
+      font-size: 12px
+      line-height: 12px
+      width: 100%
+      margin: 14px auto 0 auto
+      text-align: left
+      border-width: 1px
+
+    &.error
+      input
+        border-color: red
+
+section.profile .content
+  width: 410px
+/* session end */
+
+.flash p.error
+  color: red
+
+@media screen and (max-width: 960px)
+  section, #content footer section
+    padding: 0 20px
+    width: auto
+

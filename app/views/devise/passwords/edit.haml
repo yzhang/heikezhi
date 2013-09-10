@@ -1,0 +1,12 @@
+%section.session
+  .content
+    = render '/shared/flashes'
+
+    = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+      = f.hidden_field :reset_password_token
+      %p
+        %input#username.login.password-field{:type => 'password', :name => 'user[password]', :value => '', :placeholder => t(:password)}
+      %p
+        %input#username.login.password-field{:type => 'password', :name => 'user[password_confirmation]', :value => '', :placeholder => t(:password_confirmation)}
+      %p
+        %button.btn= t :change_password

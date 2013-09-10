@@ -1,0 +1,1 @@
+@Article = Backbone.Model.extend()

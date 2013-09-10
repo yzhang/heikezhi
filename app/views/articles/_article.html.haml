@@ -1,0 +1,28 @@
+= render 'layouts/header'
+
+%section
+  %article
+    = preserve do
+      = raw @article.content
+
+  .meta
+    %time
+      = l((@article.published_at || @article.created_at).to_date, :format => :short)
+    .clearfix
+
+  - if @article.published? && Rails.env.production? && @disqus
+    %section#disqus_thread
+      :javascript
+        var disqus_shortname = 'heikezhi';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      %a.dsq-brlink{:href => "http://disqus.com"}
+        comments powered by
+        %span.logo-disqus Disqus
+
+= render 'layouts/footer'

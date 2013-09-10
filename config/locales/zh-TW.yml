@@ -1,0 +1,256 @@
+zh-TW:
+  latest: "最新"
+  me: "我"
+  leave: "離開"
+  login: "登入"
+  signup: "註冊"
+  
+  profile: "個人資料"
+  setting: "賬戶設置"
+  bio: '自我簡介'
+  bio_140: "140字"
+  social_links: '社交鏈接'
+  twitter: "Twitter"
+  github: "Github"
+  linkedin: "LinkedIn"
+  facebook: "Facebook"
+  google_plus: "Google+"
+  additional_links: "其它鏈接"
+  
+  update: "更新"
+  save_failed: "對不起，保存失敗"
+  saved: '已保存'
+  status: '狀態'
+  pending: '草稿'
+  published: '已發布'
+  publish: '發布'
+  save: '保存'
+  edit: '修改'
+
+  some_rights_reserved: '保留部分權利'
+  about: "關於黑客誌"
+  keep_updated: '保持關注'
+  intro: "黑客誌是一個群體博客，旨在傳播各種有趣知識和技術，本站所有文章版權歸原作者所有，謝絕轉載，如需使用，請與原作者聯系。"
+  
+  change_password: '修改密碼'
+  password: '密碼'
+  password_confirmation: '密碼確認'
+  current_password: "當前密碼"
+  new_password: "新密碼"
+  forgot_password: "忘記密碼了？"
+  reset_password: "重置密碼"
+  submit: "提交"
+  create_a_new_account: '創建新賬號'
+  name: '用戶名'
+  
+  reset_password_instruction: "重置密碼步驟"
+  confirm_instruction: "請確認你的email"
+
+  view: '查看'
+  draft: '草稿'
+  delete: "刪除"
+  letters_and_numbers_only: "只允許字母和數字"
+  delete_account: '刪除賬戶?'
+
+  error_404: "404, 對不起，你要找的內容不存在!"
+  error_500: "500, 對不起，出錯了!"
+  
+  design_and_dev_by: "設計及開發"
+  date:
+    abbr_day_names:
+    - 日
+    - 一
+    - 二
+    - 三
+    - 四
+    - 五
+    - 六
+    abbr_month_names:
+    - 
+    - 1月
+    - 2月
+    - 3月
+    - 4月
+    - 5月
+    - 6月
+    - 7月
+    - 8月
+    - 9月
+    - 10月
+    - 11月
+    - 12月
+    day_names:
+    - 星期日
+    - 星期一
+    - 星期二
+    - 星期三
+    - 星期四
+    - 星期五
+    - 星期六
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%Y年%b%d日'
+      short: ! '%b%d日'
+    month_names:
+    - 
+    - 一月
+    - 二月
+    - 三月
+    - 四月
+    - 五月
+    - 六月
+    - 七月
+    - 八月
+    - 九月
+    - 十月
+    - 十一月
+    - 十二月
+    order:
+    - :year
+    - :month
+    - :day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 大約一小時
+        other: 大約 %{count} 小時
+      about_x_months:
+        one: 大約一個月
+        other: 大約 %{count} 個月
+      about_x_years:
+        one: 大約一年
+        other: 大約 %{count} 年
+      almost_x_years:
+        one: 接近一年
+        other: 接近 %{count} 年
+      half_a_minute: 半分鐘
+      less_than_x_minutes:
+        one: 不到一分鐘
+        other: 不到 %{count} 分鐘
+      less_than_x_seconds:
+        one: 不到一秒
+        other: 不到 %{count} 秒
+      over_x_years:
+        one: 一年多
+        other: ! '%{count} 年多'
+      x_days:
+        one: 一天
+        other: ! '%{count} 天'
+      x_minutes:
+        one: 一分鐘
+        other: ! '%{count} 分鐘'
+      x_months:
+        one: 一個月
+        other: ! '%{count} 個月'
+      x_seconds:
+        one: 一秒
+        other: ! '%{count} 秒'
+    prompts:
+      day: 日
+      hour: 時
+      minute: 分
+      month: 月
+      second: 秒
+      year: 年
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: 必須是可被接受的
+      blank: 不允許為空
+      confirmation: 與確認值不匹配
+      empty: 不能留空
+      equal_to: 必須等於 %{count}
+      even: 必須為雙數
+      exclusion: 是保留關鍵字
+      greater_than: 必須大於 %{count}
+      greater_than_or_equal_to: 必須大於或等於 %{count}
+      inclusion: 不包含於列表中
+      invalid: 是無效的
+      less_than: 必須小於 %{count}
+      less_than_or_equal_to: 必須小於或等於 %{count}
+      not_a_number: 不是數字
+      not_an_integer: 必須是整數
+      odd: 必須為單數
+      record_invalid: ! '驗證失敗: %{errors}'
+      taken: 已經被使用
+      too_long: 過長（最長為 %{count} 個字符）
+      too_short: 過短（最短為 %{count} 個字符）
+      wrong_length: 長度非法（必須為 %{count} 個字符）
+    template:
+      body: 如下字段出現錯誤：
+      header:
+        one: 有 1 個錯誤發生導致「%{model}」無法被保存。
+        other: 有 %{count} 個錯誤發生導致「%{model}」無法被保存。
+  helpers:
+    select:
+      prompt: 請選擇
+    submit:
+      create: 新增%{model}
+      submit: 儲存%{model}
+      update: 更新%{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ','
+        format: ! '%u %n'
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: CN¥
+    format:
+      delimiter: ! ','
+      precision: 3
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: 十億
+          million: 百萬
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 兆
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ', 且'
+      two_words_connector: ! '且'
+      words_connector: ! ', '
+  time:
+    am: 上午
+    formats:
+      default: ! '%Y年%b%d日 %A %H:%M:%S %Z'
+      long: ! '%Y年%b%d日 %H:%M'
+      short: ! '%b%d日 %H:%M'
+    pm: 下午
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors

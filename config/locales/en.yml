@@ -1,0 +1,62 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  latest: "Latest"
+  me: "Me"
+  leave: "Leave"
+  login: "Login"
+  signup: "Signup"
+  
+  profile: "Profile"
+  bio: 'Bio'
+  bio_140: "140 characters"
+  social_links: 'Social Links'
+  twitter: "Twitter"
+  github: "Github"
+  linkedin: "LinkedIn"
+  facebook: "Facebook"
+  google_plus: "Google+"
+  additional_links: "Additional Links"
+  
+  update: "Update"
+  
+  save_failed: "sorry, failed to save"
+  saved: 'saved'
+  status: 'Status'
+  pending: 'pending'
+  published: 'published'
+  publish: 'Publish'
+  save: 'Save'
+  edit: 'Edit'
+
+  some_rights_reserved: 'some rights reserved'
+  about: "About"
+  keep_updated: 'Keep Updated'
+  intro: "黑客志 is a multi-author blog focus on promoting <a href='https://en.wikipedia.org/wiki/Hacker_%28programmer_subculture%29'>hacker culture</a> and technology in China, all articles on this website belong to the author/translator."
+  
+  change_password: 'Change password'
+  password: 'Password'
+  password_confirmation: 'Password Confirmation'
+  current_password: "Current Password"
+  new_password: "New Password"
+  forgot_password: "Forgot your password?"
+  reset_password: "Reset password"
+  submit: "Submit"
+  create_a_new_account: 'Create a new account'
+  name: 'Name'
+  setting: "Setting"
+  
+  reset_password_instruction: "Reset password instructions"
+  confirm_instruction: "Please confirm your email"
+
+  view: 'View'
+  draft: 'Draft'
+  delete: "Delete"
+  letters_and_numbers_only: "only letters and numbers allowed"
+  delete_account: 'Delete Account?'
+  
+  error_404: "404, Can't find what you're looking for!"
+  error_500: "500, We're sorry, but something went wrong!"
+  
+  design_and_dev_by: "design and develop by"

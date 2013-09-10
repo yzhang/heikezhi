@@ -1,0 +1,11 @@
+%section.session
+  .content
+    = render '/shared/flashes'
+
+    = form_for :sessions, :url => '/signin' do |f|
+      %p
+        %input{:type => "text", :placeholder => "Email", :name => 'user[email]'}
+      %p
+        %input{:type => "password", :placeholder => t(:password), :name => 'user[password]'}
+      %p
+        %button.btn= t :login

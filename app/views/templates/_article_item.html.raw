@@ -1,0 +1,11 @@
+<script id="article-item" type="x/template">
+  <a href="/<%= permalink %>" data-id="<%= id %>">
+    <%= title %>
+    <time>
+      <%= published_at %>
+    </time>
+    <span class="status">
+      <%= status %>
+    </span>
+  </a>
+</script>

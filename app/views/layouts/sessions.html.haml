@@ -1,0 +1,26 @@
+!!!
+%html{lang:'zh-CN'}
+  %head
+    %meta{:charset => 'utf-8'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+
+    %title 
+      黑客志
+      - if @article.try(:title)
+        \|
+        = @article.try(:title)
+      - else
+        \| 当你决定出发，最大的困难已不复存在
+
+    %link{:rel => 'shortcut icon', :href => "/favicon.ico" }
+
+    = stylesheet_link_tag    "application"
+    = csrf_meta_tags
+
+  %body.sessions
+    #main
+      = render 'layouts/header'
+      #content
+        = yield
+
+    = render '/shared/ga'

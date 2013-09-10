@@ -1,0 +1,188 @@
+$width: 720px
+
+@import font-awesome
+
+@import base
+@import layout
+
+$marginLeft: -100px
+$fixMarginLeft: -400px
+
+aside
+  img
+    margin: 10px 25px
+  .spinner
+    display: none
+header
+  position: fixed
+  left: 30%
+  right: 0
+  top: 0
+  opacity: 1.0
+
+  input.title
+    line-height: 30px
+    font-size: 24px
+    padding: 28px 0px 8px 0px
+    border: none
+    border-bottom: 1px dashed #333
+    width: 100%
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    background-color: #fafafa
+  input.image
+    display: none
+    visibility: hidden
+  .meta
+    background-color: white
+    width: 100%
+    font-size: 12px
+    color: #999
+    padding-top: 8px
+    background-color: #fafafa
+
+    input
+      border: none
+      font-size: 11px
+      line-height: 11px
+      color: #999
+      border-radius: 4px
+      width: 300px
+      background-color: #fafafa
+  .menu
+    font-size: 28px
+    background-color: #fafafa
+    padding: 20px 0
+    border-bottom: 1px dashed #333
+    ul
+      list-style: none
+      li
+        float: left
+        margin-right: 10px
+        a
+          color: #aaa
+          text-decoration: none
+          &.active
+            color: #333
+
+@media screen and (min-width: 833px)
+  header
+    left: 250px
+
+#main, header
+  background: #fafafa
+
+article
+  margin-top: 175px
+  margin-bottom: 20px
+  border: 1px dashed #333
+  border-top: none
+  background: white
+  min-height: 800px
+  padding: 40px 50px
+  overflow-y: scroll
+  overflow-x: hidden
+
+  &:focus
+    outline: none
+  input, textarea
+    border: none
+    line-height: 32px
+    font-size: 16px
+
+  p, blockquote
+    min-height: 32px
+    line-height: 32px
+    margin-bottom: 20px
+  img
+    max-width: 598px
+  ol
+    padding-left: 30px
+    margin-bottom: 20px
+  ul
+    margin: 0
+    padding-left: 30px
+    margin-bottom: 20px
+  iframe, object, embed
+    max-width: 600px
+    margin-bottom: 20px
+  .embedly
+    border: 3px dashed $gray
+    height: 270px
+    margin-bottom: 20px
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    background-color: #D9D9D9
+    font-size: 32px
+    color: $gray
+    padding: 20px 15px
+    cursor: pointer
+    .preview
+      font-size: 120px
+      float: left
+      width: 130px
+    textarea
+      width: 400px
+      height: 160px
+      font-size: 14px
+      line-height: 20px
+    a.btn
+      margin-right: 20px
+      margin-top: 10px
+      text-decoration: none
+      float: right
+      &:hover
+        color: white
+
+// aside
+//   position: fixed
+//   cursor: inherit
+//   h1
+//     padding: 14px 0px
+//     font-size: 36px
+//     line-height: 36px
+//     
+//     .icon-spinner, .percent, .error
+//       display: none
+//     .success
+//       color: green
+//     .error
+//       color: red
+//     .error, .percent, .success
+//       font-size: 24px
+//       line-height: 24px
+//   .btn
+//     height: 40px
+//     line-height: 40px
+//     font-size: 24px
+//     text-align: center
+//     cursor: pointer
+//   .save
+//     display: none
+//   .publish
+//     background-color: #dd6349
+//     &:hover
+//       background-color: #bd4329
+//   img
+//     cursor: pointer
+
+// @media screen and (max-width:1120px) and (min-width:769px)
+//   aside
+//     display: none
+// 
+//   section.edit
+//     margin-left: 50px
+//     input.title, .menu, .meta
+//       margin-left: -250px
+// 
+// @media screen and (max-width:768px)
+//   aside
+//     display: none
+// 
+//   section.edit
+//     left: 120px
+//     position: fixed
+//     margin-left: 0
+//     input.title, .menu, .meta
+//       margin-left: 0
+//       left: 120px
