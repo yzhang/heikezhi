@@ -5,6 +5,8 @@
     - if !@article.published?
       %a.publish{href: publish_article_path(@article.permalink), title: "Publish"}
         %i.icon-share
+    %a{href: "/mine", title: 'Preview', target: '_blank'}
+      %i.icon-eye-open
     %a.spinner
       %i.icon-spin.icon-spinner
     %a.percent
@@ -13,4 +15,4 @@
   %ul#images-list
     - current_user.images.limit(9).each do |i|
       %li
-        %img{id: "image#{i.id}", src: i.image_file.thumb.url, width:"200", 'data-large' => i.image_file.large.url, 'data-width' => i.image_width}
+        %img{id: "image#{i.id}", src: i.image_file.thumb.url, 'data-large' => i.image_file.large.url, 'data-width' => i.image_width}

@@ -4,7 +4,7 @@ class Account::ProfileController < ApplicationController
   def edit
     @profile = current_user.profile
     @title = 'Edit Profile'
-    @user = current_user
+    @user  = current_user
   end
 
   def update

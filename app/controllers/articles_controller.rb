@@ -64,6 +64,8 @@ class ArticlesController < ApplicationController
     else
       @article = current_user.articles.order("created_at DESC").first
     end
+    
+    @article ||= current_user.articles.create
 
     respond_to do |wants|
       wants.html {render layout: !bare}

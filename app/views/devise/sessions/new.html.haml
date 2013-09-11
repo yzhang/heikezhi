@@ -8,4 +8,10 @@
       %p
         %input{:type => "password", :placeholder => t(:password), :name => 'user[password]'}
       %p
-        %button.btn= t :login
+        %button.btn= 'Sign In'
+    
+    .extra
+      %p
+        = link_to 'Sign Up', '/signup'
+        \|
+        %a{:href => "/forgot_password"} Forgot password?

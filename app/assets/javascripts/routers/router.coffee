@@ -11,8 +11,9 @@
       @prev.trigger("deactive") 
       (new ArticleView({model: article})).render()
 
-    $("aside").scrollTo
-      endY: $(".active")[0].offsetTop - 200
-      duration: 500
+    if $(".active")[0]
+      $("aside").scrollTo
+        endY: $(".active")[0].offsetTop - 200
+        duration: 500
 
     @prev = article

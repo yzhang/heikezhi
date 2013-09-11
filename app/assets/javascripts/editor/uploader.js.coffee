@@ -10,7 +10,6 @@
     dt = e.originalEvent.dataTransfer
     imageId = dt.getData("Text")
     
-    console.log e.originalEvent
     if imageId
       @setCaret(e.originalEvent.target)
       img = $("##{imageId}")
@@ -19,10 +18,10 @@
       pic = e.originalEvent.dataTransfer.files[0]
       @insertImage(pic)
 
-  $("aside #images-list img").bind 'dragstart', (e) ->
+  $("aside").on 'dragstart', "#images-list img", (e) ->
     e.originalEvent.dataTransfer.setData("Text", $(this).attr('id'));
 
-  $("aside #images-list img").click (e) =>
+  $("aside").on "click", "#images-list img", (e) =>
     e.preventDefault()
     return unless @range()
     img = $(e.target)
@@ -32,6 +31,7 @@
   data  = new FormData()
   data.append("image[image_data]", $("img#" + imageId).attr('src'))
   $("img#" + imageId).attr('data-uploaded', false)
+  
 
   @ajax(
     type: 'POST'
@@ -46,7 +46,7 @@
         myXhr.upload.addEventListener 'progress', (e) ->
           progress = Math.floor(100*e.loaded / e.total)
           if progress == 100
-            $("aside .percent").text("processing...")
+            $("aside .percent").text("...")
           else
             $("aside .percent").text(progress + '%')
         , false
@@ -56,6 +56,7 @@
     $("img#" + imageId).attr("width", image.width)
     $("img#" + imageId).attr('data-uploaded', true)
     @dirty = true
+    $("#images-list").prepend("<li><img id='image#{image.id}' src='#{image.thumb}' data-large='#{image.src}' data-width='#{image.width}'></li>")
   )
 
 @HKZ.Editor::insertImage = (pic) ->

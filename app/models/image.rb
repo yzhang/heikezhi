@@ -12,7 +12,9 @@ class Image < ActiveRecord::Base
 
   def as_json(options={})
     {
+      id: id,
       src:   image_file.large.url,
+      thumb: image_file.thumb.url,
       width: image_width
     }
   end
