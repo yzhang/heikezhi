@@ -14,4 +14,5 @@
       data: 'bare=1'
       success: (html) =>
         @$el.html(html)
+        $('pre code').each (i, e) -> hljs.highlightBlock(e)
         $("#spinner").hide()
