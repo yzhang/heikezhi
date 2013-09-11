@@ -48,6 +48,7 @@ class @HKZ.Editor
   pre:    -> $(@container()).closest("pre")
   code:   -> $(@container()).closest("code")
   p:      -> $(@container()).closest("p")
+  lastP:  -> $("article p").last()
   a:      -> $(@container()).closest("a")
   strike: -> $(@container()).closest("strike")
   b:      -> $(@container()).closest("b")
@@ -257,7 +258,6 @@ class @HKZ.Editor
     @menu.quote.click   (e) => @insertQuote()
     @menu.code.click    (e) => @insertCode()
     @menu.picture.click (e) => 
-      return unless @range()
       @fileInput.click()
     @menu.video.click   (e) => @insertVideo()
     @menu.link.click    (e) => @insertLink()
@@ -273,14 +273,6 @@ class @HKZ.Editor
       if t.length == 0
         @p().remove()
       document.execCommand('formatBlock', false, 'h3')
-
-
-      # @storeRange()
-      # if @isFirefox()
-      #   @p().replaceWith(@p().html()) if @p().length
-      # else
-      #   @header().text(@p().text()) if @p().length
-      # @restoreRange()
 
       @menus.removeClass('active')
       @menu.header.addClass('active')
@@ -388,7 +380,7 @@ class @HKZ.Editor
       @menu.code.removeClass('active')
 
   insertVideo: ->
-    return unless @range()
+    @setCaret(@lastP()[0]) unless @range()
     return if $(".embedly").length
 
     block = $(@container()).closest('p,h3,blockquote,pre,ul,ol')
@@ -412,7 +404,6 @@ class @HKZ.Editor
       @menu.link.addClass('active')
 
   bold: ->
-    alert('a')
     return unless @range()
     b= @b()
     if b.length

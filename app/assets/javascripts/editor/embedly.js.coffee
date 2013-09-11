@@ -31,4 +31,4 @@
   @editor.on 'click', '.embedly .cancel', (e) =>
     $(".embedly").remove()
     @editor.attr('contenteditable', true)
-    #document.execCommand('formatBlock', false, 'p')
+    document.execCommand('formatBlock', false, 'p')

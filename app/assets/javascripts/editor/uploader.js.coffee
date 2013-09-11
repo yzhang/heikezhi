@@ -74,12 +74,13 @@
   reader = new FileReader()
   reader.onload = (e) =>
     imageId = (new Date()).valueOf()
-    if @range()
-      document.execCommand('inserthtml', false, "<img id='" + imageId + "' src='" + e.target.result + "'>")
-      @p().after('<p></p>') unless @p().next().length
-    else
-      return
+
+    @setCaret(@lastP()[0]) unless @range()
+
+    document.execCommand('inserthtml', false, "<img id='" + imageId + "' src='" + e.target.result + "'>")
+    @p().after('<p></p>') unless @p().next().length
 
     @uploadImage(imageId)
 
   reader.readAsDataURL(pic)
+
