@@ -60,8 +60,8 @@ footer
       text-decoration: none
     .avatar
       float: left
+      padding-top: 8px
       img
-        padding-top: 8px
         width: 80px
         height: 80px
         border-radius: 100%
@@ -150,3 +150,16 @@ section.profile .content
     padding: 0 20px
     width: auto
 
+@media screen and (max-width: 440px)
+  article pre
+    overflow: hidden
+    word-wrap: break-word
+  footer section .user
+    width: 280px
+    .bio
+      b
+        line-height: 280%
+      width: 160px
+      margin-left: 30px
+      line-height: 150%
+    
