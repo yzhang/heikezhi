@@ -10,7 +10,11 @@
   container = document.createElement('div')
   container.appendChild(content)
 
-  data.append("content", $(container).html())
+  clean = $(container).html()
+  clean = clean.replace(/^[\s\r\n]*/, '')
+  clean = clean.replace(/[\s\r\n]*$/, '')
+
+  data.append("content", clean)
 
   @ajax(
     url: $("#article-form").attr('action')

@@ -50,11 +50,7 @@
           Sorry, doesn't support your browser at now, please switch to a webkit/blink based browser.
     - else
       %article{contenteditable: "true", spellcheck: "false"}
-        - if @article.content.try(:strip).present?
-          = preserve do
-            =raw @article.content
-        - else
-          %p
+        =preserve @article.content
 
 %script#embedly-template{type: 'x/template'}
   .embedly

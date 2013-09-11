@@ -42,7 +42,7 @@ class Article < ActiveRecord::Base
   end
 
   def sanitize
-    content = Sanitize.clean(content, HKZ_SANITIZE)
+    content = Sanitize.clean(content, HKZ_SANITIZE).try(:strip)
   end
   
   def as_json(options={})

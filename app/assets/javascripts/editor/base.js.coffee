@@ -112,30 +112,6 @@ class @HKZ.Editor
     else if @strike().length
       @menu.strike.addClass('active')
   
-  # autoScroll: ->
-  #   r = @range()
-  #   c = @container()
-  #   return unless r && c
-  #   return unless r.collapsed
-  # 
-  #   u = document.createElement("span")
-  #   $(u).html("&#8203;")
-  #   $(u).addClass("caret")
-  #   r.insertNode(u)
-  # 
-  #   top  = $(".caret").offset().top - 190
-  #   left = $(".caret").offset().left
-  #   $("span.caret").remove()
-  #   code = $(c).closest('code')
-  #   if code.length
-  #     @storeRange()
-  #     t = code.text()
-  #     code.text(t)
-  #     @restoreRange()
-  # 
-  #   if window.scrollY > top
-  #     window.scrollTo(left, top)
-  
   newPreLine: (e) ->
     e.preventDefault()
 
@@ -157,7 +133,7 @@ class @HKZ.Editor
     e.preventDefault()
     if @quote().text().length
       @p().remove()
-      @quote().after("<p></p>")
+      @quote().after("<p><br></p>")
       b = @quote()[0]
     else
       b = document.createElement('p')
@@ -167,11 +143,6 @@ class @HKZ.Editor
       b = b.childNodes[0]
 
     @setCaret(b)
-
-  del: ->
-    nodeName = $(@container()).parent()[0].nodeName
-    if nodeName == 'FORM' || nodeName == 'ARTICLE'
-      document.execCommand('formatBlock', false, 'p')
 
   tab: (e) ->
     e.preventDefault()
@@ -183,33 +154,12 @@ class @HKZ.Editor
     $("aside .save").show()
 
   initEditor: ->
-    @editor.height($(window).height() - 216)
-
-    @editor.click (e) =>
-      node = $(@container()).parent()[0]
-
-      if node && node.nodeName == 'FORM' && @isFirefox()
-        p = document.createElement('p')
-        $(p).append(document.createTextNode("\n"))
-        @editor.append(p)
-        a = $(p).prev()
-        $(p).remove()
-        if a[0].childNodes.length
-          @setCaret(a[0].childNodes[0])
-        else
-          a.append(document.createTextNode("\n"))
-          @setCaret(a[0].childNodes[0])
-
-      @updateMenu()
+    @editor.click (e) => @updateMenu()
 
     @editor.keyup (e) =>
-      @newParagraph() if e.which == 13 
-      @del()   if e.which == 8
-      if @editor.find('br').length
-        @storeRange()
-        @editor.find('br').remove() 
-        @restoreRange()
-    
+      if !$(@container()).closest('p,li,blockquote,pre').length
+        document.execCommand('formatBlock', false, 'p')
+
       @updateMenu()
       @markDirty()
 
@@ -222,7 +172,6 @@ class @HKZ.Editor
     
     @editor.on 'click', 'img', (e) =>
       e.preventDefault()
-
       @setSelection(e.target)
   
     window.onbeforeunload = =>
@@ -338,7 +287,7 @@ class @HKZ.Editor
 
     else if @p().length
       p = @p()
-      p.after('<p></p>') unless p.next().length
+      p.after('<p><br></p>') unless p.next().length
       p.wrap('<blockquote></blockquote>')
 
       quote = p.closest('blockquote')
@@ -352,7 +301,7 @@ class @HKZ.Editor
     p = @p()
     if p.length
       text = p.text()
-      p.after("<p></p>") unless p.next().length
+      p.after("<p><br></p>") unless p.next().length
       p.wrap('<pre><code></code></pre>')
 
       code = p.closest('code')
