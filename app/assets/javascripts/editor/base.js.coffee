@@ -168,10 +168,6 @@ class @HKZ.Editor
 
     @setCaret(b)
 
-  newParagraph: ->
-    if !$(@container()).closest('p,li,blockquote,pre').length
-      document.execCommand('formatBlock', false, 'p')
-
   del: ->
     nodeName = $(@container()).parent()[0].nodeName
     if nodeName == 'FORM' || nodeName == 'ARTICLE'
@@ -413,7 +409,6 @@ class @HKZ.Editor
       @setCaret(u)
       @menu.bold.removeClass('active')
     else if $(@container()).closest('p,li,blockquote,h3').length
-      alert('b')
       document.execCommand('bold', false)
       @menu.bold.addClass('active')
   

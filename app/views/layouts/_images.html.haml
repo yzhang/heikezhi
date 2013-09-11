@@ -5,7 +5,7 @@
     - if !@article.published?
       %a.publish{href: publish_article_path(@article.permalink), title: "Publish"}
         %i.icon-share
-    %a{href: "/mine", title: 'Preview', target: '_blank'}
+    %a{href: mine_article_path(@article.permalink), title: 'Preview', target: '_blank'}
       %i.icon-eye-open
     %a.spinner
       %i.icon-spin.icon-spinner

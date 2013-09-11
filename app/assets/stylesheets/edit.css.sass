@@ -26,15 +26,16 @@ header
   opacity: 1.0
 
   input.title
-    line-height: 30px
-    font-size: 24px
-    padding: 28px 0px 8px 0px
+    line-height: 18px
+    font-size: 18px
+    padding: 18px 0px 8px 0px
     border: none
     border-bottom: 1px dashed #333
     width: 100%
     box-sizing: border-box
     -moz-box-sizing: border-box
     background-color: #fafafa
+
   input.image
     display: none
     visibility: hidden
@@ -42,6 +43,7 @@ header
     background-color: white
     width: 100%
     font-size: 12px
+    line-height: 20px
     color: #999
     padding-top: 8px
     background-color: #fafafa
@@ -54,10 +56,11 @@ header
       border-radius: 4px
       width: 300px
       background-color: #fafafa
+
   .menu
-    font-size: 28px
+    font-size: 18px
     background-color: #fafafa
-    padding: 20px 0
+    padding: 5px 0
     border-bottom: 1px dashed #333
     ul
       list-style: none
@@ -74,17 +77,16 @@ header
   header
     left: 250px
 
-#main, header
+#main
   background: #fafafa
 
 article
-  margin-top: 175px
-  margin-bottom: 20px
+  margin: 120px 0 50px 0
   border: 1px dashed #333
   border-top: none
   background: white
   min-height: 800px
-  padding: 40px 50px
+  padding: 40px
   overflow-y: scroll
   overflow-x: hidden
 
@@ -98,9 +100,8 @@ article
   pre
     background-color: #f2f2f2
   p, blockquote
-    min-height: 32px
-    line-height: 32px
-    margin-bottom: 20px
+    line-height: 150%
+    margin-bottom: 16px
   img
     max-width: 598px
   ol
@@ -140,56 +141,3 @@ article
       float: right
       &:hover
         color: white
-
-// aside
-//   position: fixed
-//   cursor: inherit
-//   h1
-//     padding: 14px 0px
-//     font-size: 36px
-//     line-height: 36px
-//     
-//     .icon-spinner, .percent, .error
-//       display: none
-//     .success
-//       color: green
-//     .error
-//       color: red
-//     .error, .percent, .success
-//       font-size: 24px
-//       line-height: 24px
-//   .btn
-//     height: 40px
-//     line-height: 40px
-//     font-size: 24px
-//     text-align: center
-//     cursor: pointer
-//   .save
-//     display: none
-//   .publish
-//     background-color: #dd6349
-//     &:hover
-//       background-color: #bd4329
-//   img
-//     cursor: pointer
-
-// @media screen and (max-width:1120px) and (min-width:769px)
-//   aside
-//     display: none
-// 
-//   section.edit
-//     margin-left: 50px
-//     input.title, .menu, .meta
-//       margin-left: -250px
-// 
-// @media screen and (max-width:768px)
-//   aside
-//     display: none
-// 
-//   section.edit
-//     left: 120px
-//     position: fixed
-//     margin-left: 0
-//     input.title, .menu, .meta
-//       margin-left: 0
-//       left: 120px
