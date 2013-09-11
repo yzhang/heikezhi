@@ -7,6 +7,7 @@ class @HKZ.Editor
     @fileInput = $(fileInput)
     
     @dirty = false
+    @last_saved_content = @editor.html()
 
     @initMenu(menu)
     @initEditor()
@@ -15,12 +16,12 @@ class @HKZ.Editor
     @initUploader()
     @initAutoSave()
   
-  isFirefox: ->
-    navigator.userAgent.toLowerCase().indexOf('firefox') > -1
+  # isFirefox: ->
+  #   navigator.userAgent.toLowerCase().indexOf('firefox') > -1
 
   range: -> 
     s = window.getSelection()
-    return null unless s.type == 'Caret' || s.type == 'Range' || @isFirefox()
+    return null unless s.type == 'Caret' || s.type == 'Range'
     r = s.getRangeAt(0)
     return r if $(r.commonAncestorContainer).closest('article').length
     
@@ -177,7 +178,7 @@ class @HKZ.Editor
     window.onbeforeunload = =>
       if @dirty
         return "Article unsaved, sure to leave?"
-      
+
   initMenu: (menu) ->
     @menus     = $(menu).find('a')
     @menu =
@@ -231,20 +232,14 @@ class @HKZ.Editor
 
     if @li().length
       html = @li().html()
-      if @isFirefox()
-        @ul().replaceWith("<p>" + html + "</p>")
-      else
-        document.execCommand('formatBlock', false, 'p')
-        @p().html(@li().html())
+      document.execCommand('formatBlock', false, 'p')
+      @p().html(@li().html())
 
       @menu.ul.removeClass('active')
     else if @p().length
       document.execCommand('insertunorderedlist', false, '');
       @storeRange()
-      if @isFirefox()
-        @p().replaceWith(@p().html()) if @p().length
-      else
-        @ul().unwrap("p") if @p().length
+      @ul().unwrap("p") if @p().length
       @restoreRange()
 
       @menus.removeClass('active')
@@ -256,20 +251,14 @@ class @HKZ.Editor
 
     if @li().length
       html = @li().html()
-      if @isFirefox()
-        @ol().replaceWith("<p>" + html + "</p>")
-      else
-        document.execCommand('formatBlock', false, 'p')
-        @p().html(html)
+      document.execCommand('formatBlock', false, 'p')
+      @p().html(html)
 
       @menu.ol.removeClass('active')
     else if @p().length 
       document.execCommand('insertorderedlist', false, '');
       @storeRange()
-      if @isFirefox()
-        @p().replaceWith(@p().html()) if @p().length
-      else
-        @ol().unwrap("p") if @p().length
+      @ol().unwrap("p") if @p().length
       @restoreRange()
 
       @menus.removeClass('active')

@@ -33,10 +33,10 @@
       , 0
 
     else
-      if @isFirefox()
-        $(@container()).closest("p,blockquote,h3,ul,ol").after("<div class='paste' style='display:block;position:absolute;top:-9999px;left:-9999px;'> </div>")
-      else
-        $(@container()).closest("p,blockquote,h3,ul,ol").after("<p class='paste' style='display:block;position:absolute;top:-9999px;left:-9999px;'> </p>")
+      # if @isFirefox()
+      #   $(@container()).closest("p,blockquote,h3,ul,ol").after("<div class='paste' style='display:block;position:absolute;top:-9999px;left:-9999px;'> </div>")
+      # else
+      $(@container()).closest("p,blockquote,h3,ul,ol").after("<p class='paste' style='display:block;position:absolute;top:-9999px;left:-9999px;'> </p>")
       u = $(".paste")[0].childNodes[0]
       @setCaret(u)
 

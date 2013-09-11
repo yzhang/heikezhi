@@ -13,6 +13,12 @@
   clean = $(container).html()
   clean = clean.replace(/^[\s\r\n]*/, '')
   clean = clean.replace(/[\s\r\n]*$/, '')
+  
+  if @last_saved_content == clean
+    @dirty = false
+    return
+  else
+    @last_saved_content = clean
 
   data.append("content", clean)
 
