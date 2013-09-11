@@ -4,6 +4,7 @@ $width: 600px
 
 @import base
 @import layout
+@import vendor/tomorrow
 
 header
   position: relative
@@ -33,7 +34,9 @@ article
   img
     max-width: 600px
   pre
-    overflow-x: scroll
+    background-color: #fffaec
+    code
+      background-color: #fffaec
   ul, ol
     margin-left: 40px
   a
@@ -151,9 +154,6 @@ section.profile .content
     width: auto
 
 @media screen and (max-width: 440px)
-  article pre
-    overflow: hidden
-    word-wrap: break-word
   footer section .user
     width: 280px
     .bio

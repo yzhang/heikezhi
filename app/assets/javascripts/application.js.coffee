@@ -2,6 +2,7 @@
 #= require vendor/zepto.scroll
 #= require vendor/underscore
 #= require vendor/backbone
+#= require vendor/highlight.pack
 
 #= require models/article
 #= require collections/articles
@@ -28,3 +29,5 @@ class App
 $ ->
   window.app = new App()
   app.start()
+  
+  $('pre code').each (i, e) -> hljs.highlightBlock(e)
