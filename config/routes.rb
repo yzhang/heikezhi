@@ -24,6 +24,7 @@ Hkz::Application.routes.draw do
 
   get  '/page/:page' => 'articles#index'
   get  '/atom'   => 'articles#index', defaults: {format: 'atom'}
+  get  '/articles' => 'articles#index'
   root :to => 'articles#index'
 
   resources :images

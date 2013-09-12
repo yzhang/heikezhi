@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
       google_plus: 'http://gplus.to/yuanyiz',
       github: 'https://github.com/yzhang/heikezhi',
       atom_feed: '/atom',
-      json_feed: '/'
+      json_feed: '/articles'
     )
     @disqus = true
 
