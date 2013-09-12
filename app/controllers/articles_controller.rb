@@ -13,7 +13,12 @@ class ArticlesController < ApplicationController
     @disqus = true
 
     respond_to do |format|
-      format.html { @article = Article.recommended.first }
+      format.html { 
+        @article = Article.recommended.first 
+        
+        user_agent =  request.env['HTTP_USER_AGENT'].downcase
+        render html: '' if user_agent.index('iPhone;')
+      }
       format.json {
         @articles = Article.includes(:user).recommended.to_a
         render json: @articles.to_json(logged_in:false) 
@@ -31,11 +36,11 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html { render 'index' }
       format.json {
-        @articles = @user.articles.published.to_a
+        @articles = @user.articles.includes(:user).published.to_a
         render json: @articles.to_json(logged_in:false) 
       }
       format.atom { 
-        @articles = @user.articles.published.page(1) 
+        @articles = @user.articles.includes(:user).published.page(1) 
         render 'index'
       }
     end
@@ -59,12 +64,8 @@ class ArticlesController < ApplicationController
     bare   = params[:bare] == '1'
     @disqus = false
 
-    if params[:permalink].present?
-      @article = current_user.articles.where(permalink:params[:permalink]).first
-    else
-      @article = current_user.articles.order("created_at DESC").first
-    end
-    
+    @article = current_user.articles.where(permalink:params[:permalink]).first
+    @article ||= current_user.articles.order("created_at DESC").first
     @article ||= current_user.articles.create
 
     respond_to do |wants|

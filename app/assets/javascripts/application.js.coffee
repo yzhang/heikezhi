@@ -28,6 +28,6 @@ class App
 
 $ ->
   window.app = new App()
-  app.start()
+  app.start() unless window.location.pathname != '/' && $(window).width() <= 640
   
   $('pre code').each (i, e) -> hljs.highlightBlock(e)
