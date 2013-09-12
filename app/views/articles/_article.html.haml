@@ -11,7 +11,7 @@
     .clearfix
 
   - if @article.published? && Rails.env.production? && @disqus
-    %section#disqus_thread
+    #disqus_thread
       :javascript
         var disqus_shortname = 'heikezhi';
 
