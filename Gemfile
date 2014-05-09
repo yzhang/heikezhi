@@ -24,7 +24,7 @@ gem 'formtastic'
 gem 'letter_opener'
 
 gem 'devise'
-gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git', branch: 'rails4'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'omniauth'
 gem 'kaminari'
 
