@@ -1,5 +1,5 @@
 # first time start server
-# RAILS_ENV=production bundle exec unicorn_rails -p 2013 -c config/unicorn.rb -D
+# RAILS_ENV=production bundle exec unicorn_rails -p 2014 -c config/unicorn.rb -D
 # rails_env = ENV['RAILS_ENV'] || 'production'
 APP_ROOT = File.expand_path(File.dirname(File.dirname(__FILE__)))
 
@@ -18,7 +18,7 @@ APP_ROOT = File.expand_path(File.dirname(File.dirname(__FILE__)))
 ENV['BUNDLE_GEMFILE'] = File.expand_path('../Gemfile', File.dirname(__FILE__))
 require 'bundler/setup'
 
-worker_processes 2
+worker_processes 1
 working_directory APP_ROOT
 
 preload_app true
